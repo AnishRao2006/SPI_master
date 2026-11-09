@@ -244,7 +244,6 @@ always_ff @(posedge clk) begin
 case(current_state)
 DATA_0 : begin 
 if(high_flag) MOSI <= shift_out_data[0];
-else if(low_flag) MOSI <= shift_out_data[0];
 else MOSI <= shift_out_data[0];
 end
 DATA_1 : begin
@@ -253,7 +252,6 @@ else MOSI <= shift_out_data[0];
 end
 DATA_2 : begin 
 if(low_flag) MOSI <= shift_out_data[0];
-else if(low_flag) MOSI <= shift_out_data[0];
 else MOSI <= shift_out_data[0];
 end
 DATA_3 : begin

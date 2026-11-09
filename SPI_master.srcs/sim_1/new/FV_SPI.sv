@@ -33,6 +33,15 @@ always #5 clk = ~clk;
 
 SPI_master #(DATA_WIDTH,SYS_CLK,SYS_SCLK) DUT (.*);
 
+SVA_SPI #(DATA_WIDTH,SYS_CLK,SYS_SCLK) spi_spa (.*,.current_state(DUT.current_state),.next_state(DUT.next_state),
+                                                .shift_in_data(DUT.shift_in_data),
+                                                .shift_out_data(DUT.shift_out_data),
+                                                .high_flag(DUT.high_flag),
+                                                .low_flag(DUT.low_flag),
+                                                .button_current(DUT.button_current),
+                                                .button_next(DUT.button_next),
+                                                .data_count(DUT.data_count));
+
 initial begin
 reset = 1;in_data = 0;CPOL = 0;CPHA = 0;SPIDAT = 0;MISO = 0;
 #20 reset = 0;
