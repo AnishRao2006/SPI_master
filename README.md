@@ -11,6 +11,7 @@ This module acts as the primary controller in a synchronous serial communication
 
 ## Verification Status
 * **Verified With:** UVM (Universal Verification Methodology)
+* **Also Used:** SVA (System Verilog Assertions) for Catching Bugs in the Datapath.
 * **Status:** Fully constrained, randomized testing completed with scoreboards, checkers, and functional coverage models ensuring robust protocol compliance.
 
 ---
